@@ -1,16 +1,185 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE, FEATURED_PROJECTS } from "../config";
+import "../styles/index.css";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title={SITE.title}>
+	<Header />
+
+	<!-- Banner / Hero Section -->
+	<section id="banner">
+		<div class="inner">
+			<h2>{SITE.hero.title}</h2>
+			<p>
+				{SITE.hero.subtitle}<br />
+				{SITE.hero.description}
+			</p>
+			<ul class="actions special">
+				<li>
+					<a href="/projects" class="button primary">Ver Proyectos</a>
+				</li>
+			</ul>
+		</div>
+		<a href="#one" class="more scrolly">Conocer más</a>
+	</section>
+
+	<!-- Sobre Mí -->
+	<section id="one" class="wrapper style1 special">
+		<div class="inner">
+			<header class="major">
+				<h2>Desarrollador de Software Multiplataforma</h2>
+				<p>
+					Estudiante apasionado por crear soluciones tecnológicas
+					innovadoras.<br />
+					Experiencia en desarrollo web, móvil y gestión de proyectos con
+					metodologías ágiles.
+				</p>
+			</header>
+			<ul class="icons major">
+				<li>
+					<span class="icon solid fa-code major style1"
+						><span class="label">Desarrollo</span></span
+					>
+				</li>
+				<li>
+					<span class="icon solid fa-mobile-alt major style2"
+						><span class="label">Móvil</span></span
+					>
+				</li>
+				<li>
+					<span class="icon solid fa-database major style3"
+						><span class="label">Bases de Datos</span></span
+					>
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- Proyectos Destacados -->
+	<section id="two" class="wrapper alt style2">
+		{
+			FEATURED_PROJECTS.map((project, index) => (
+				<section class="spotlight">
+					<div class="image">
+						<img
+							src={`/images/project-${index + 1}.jpg`}
+							alt={project.title}
+						/>
+					</div>
+					<div class="content">
+						<h2>{project.title}</h2>
+						{project.badge && (
+							<span class="badge">{project.badge}</span>
+						)}
+						<p>{project.description}</p>
+						<p class="technologies">
+							<strong>Tecnologías:</strong>{" "}
+							{project.technologies.join(", ")}
+						</p>
+						{project.github && (
+							<ul class="actions">
+								<li>
+									<a
+										href={project.github}
+										target="_blank"
+										rel="noopener noreferrer"
+										class="button small"
+									>
+										Ver en GitHub
+									</a>
+								</li>
+							</ul>
+						)}
+					</div>
+				</section>
+			))
+		}
+	</section>
+
+	<!-- Habilidades -->
+	<section id="three" class="wrapper style3 special">
+		<div class="inner">
+			<header class="major">
+				<h2>Habilidades Técnicas</h2>
+				<p>
+					Tecnologías y herramientas con las que trabajo<br />
+					para crear soluciones de software de calidad.
+				</p>
+			</header>
+			<ul class="features">
+				<li class="icon solid fa-laptop-code">
+					<h3>Desarrollo Web</h3>
+					<p>
+						React, Laravel, Node.js, Express. Creación de
+						aplicaciones web modernas y escalables.
+					</p>
+				</li>
+				<li class="icon solid fa-mobile-alt">
+					<h3>Desarrollo Móvil</h3>
+					<p>
+						React Native, Firebase. Aplicaciones móviles
+						multiplataforma con experiencia de usuario fluida.
+					</p>
+				</li>
+				<li class="icon solid fa-database">
+					<h3>Bases de Datos</h3>
+					<p>
+						MySQL, MongoDB, Firebase. Diseño y gestión de bases de
+						datos relacionales y NoSQL.
+					</p>
+				</li>
+				<li class="icon solid fa-code-branch">
+					<h3>Control de Versiones</h3>
+					<p>
+						Git, GitHub. Trabajo colaborativo y gestión de código
+						fuente con buenas prácticas.
+					</p>
+				</li>
+				<li class="icon solid fa-tasks">
+					<h3>Metodologías Ágiles</h3>
+					<p>
+						SCRUM, Kanban. Gestión de proyectos con enfoque
+						iterativo e incremental.
+					</p>
+				</li>
+				<li class="icon solid fa-tools">
+					<h3>Herramientas</h3>
+					<p>
+						Docker, Postman, Figma, VS Code. Ecosistema completo de
+						desarrollo profesional.
+					</p>
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- CTA -->
+	<section id="cta" class="wrapper style4">
+		<div class="inner">
+			<header>
+				<h2>¿Interesado en colaborar?</h2>
+				<p>
+					Estoy abierto a oportunidades de colaboración en proyectos
+					innovadores<br />
+					y desafíos que impulsen mi crecimiento profesional.
+				</p>
+			</header>
+			<ul class="actions stacked">
+				<li>
+					<a href="/about" class="button fit primary"
+						>Conocer más sobre mí</a
+					>
+				</li>
+				<li>
+					<a href={`mailto:${SITE.email}`} class="button fit"
+						>Contactar</a
+					>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<Footer />
+</Layout>

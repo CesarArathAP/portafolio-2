@@ -1,0 +1,388 @@
+#page-header {
+        background-color: var(--primary-color);
+        color: rgba(255, 255, 255, 0.75);
+        padding: 8em 0 6em 0;
+        text-align: center;
+        margin-top: 3.25em;
+    }
+
+    #page-header h1 {
+        color: #fff;
+        font-size: 3em;
+        margin: 0 0 0.5em 0;
+    }
+
+    #page-header p {
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 1.1em;
+    }
+
+    #about {
+        padding: 6em 0;
+    }
+
+    .about-content {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .profile-section {
+        display: flex;
+        gap: 3em;
+        margin-bottom: 4em;
+        padding-bottom: 3em;
+        border-bottom: 2px solid var(--border-color);
+    }
+
+    .profile-image {
+        flex-shrink: 0;
+    }
+
+    .avatar {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: linear-gradient(
+            135deg,
+            var(--primary-color),
+            var(--secondary-color)
+        );
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 4em;
+        font-weight: 700;
+    }
+
+    .profile-info {
+        flex-grow: 1;
+    }
+
+    .profile-info h2 {
+        margin: 0 0 0.25em 0;
+        color: var(--text-color);
+        font-size: 2.5em;
+    }
+
+    .profile-info .title {
+        color: var(--primary-color);
+        font-size: 1.2em;
+        font-weight: 600;
+        margin-bottom: 1.5em;
+    }
+
+    .contact-info {
+        margin-bottom: 1.5em;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        margin-bottom: 0.75em;
+        color: #666;
+    }
+
+    .contact-item i {
+        color: var(--primary-color);
+        width: 20px;
+    }
+
+    .contact-item a {
+        color: inherit;
+        border-bottom: 1px dotted var(--border-color);
+    }
+
+    .contact-item a:hover {
+        color: var(--primary-color);
+        border-bottom-color: transparent;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 1em;
+    }
+
+    .social-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+        color: #fff;
+        font-size: 1.5em;
+        transition: all 0.3s ease;
+        border: 0;
+    }
+
+    .social-link:hover {
+        background-color: var(--secondary-color);
+        transform: translateY(-3px);
+    }
+
+    .bio-section h3 {
+        color: var(--text-color);
+        font-size: 2em;
+        margin-bottom: 1em;
+    }
+
+    .bio-section p {
+        color: #666;
+        font-size: 1.05em;
+        line-height: 1.8;
+        margin-bottom: 1.5em;
+    }
+
+    /* Education & Certifications */
+    .wrapper.style3 {
+        background-color: #f7f7f7;
+        padding: 6em 0;
+    }
+
+    .section-header {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        margin-bottom: 3em;
+        justify-content: center;
+    }
+
+    .section-header i {
+        font-size: 2.5em;
+        color: var(--primary-color);
+    }
+
+    .section-header h2 {
+        margin: 0;
+        color: var(--text-color);
+        font-size: 2.5em;
+    }
+
+    .timeline {
+        max-width: 700px;
+        margin: 0 auto;
+        position: relative;
+        padding-left: 3em;
+    }
+
+    .timeline::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(
+            to bottom,
+            var(--primary-color),
+            var(--secondary-color)
+        );
+    }
+
+    .timeline-item {
+        position: relative;
+        margin-bottom: 3em;
+    }
+
+    .timeline-marker {
+        position: absolute;
+        left: -3.5em;
+        top: 0.5em;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+        border: 3px solid #fff;
+        box-shadow: 0 0 0 3px var(--primary-color);
+    }
+
+    .timeline-content h3 {
+        margin: 0 0 0.5em 0;
+        color: var(--text-color);
+        font-size: 1.5em;
+    }
+
+    .timeline-content .institution {
+        color: #666;
+        font-size: 1.1em;
+        margin-bottom: 0.5em;
+    }
+
+    .timeline-content .year {
+        color: var(--primary-color);
+        font-weight: 600;
+        font-size: 0.95em;
+    }
+
+    .certifications-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 2em;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .cert-card {
+        background: #fff;
+        padding: 2em;
+        border-radius: 0.5em;
+        border: 1px solid var(--border-color);
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .cert-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .cert-card i {
+        font-size: 3em;
+        color: var(--primary-color);
+        margin-bottom: 0.5em;
+    }
+
+    .cert-card h4 {
+        margin: 0 0 0.5em 0;
+        color: var(--text-color);
+        font-size: 1.1em;
+    }
+
+    .cert-year {
+        color: #999;
+        font-size: 0.9em;
+        font-weight: 600;
+    }
+
+    /* CTA */
+    .wrapper.style4 {
+        background-color: var(--primary-color);
+        color: rgba(255, 255, 255, 0.75);
+        text-align: center;
+        padding: 4em 0 2em 0;
+    }
+
+    .wrapper.style4 h2 {
+        color: #fff;
+    }
+
+    .wrapper.style4 p {
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+    .button {
+        appearance: none;
+        background-color: transparent;
+        border: 0;
+        border-radius: 3.5em;
+        box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 0.8em;
+        font-weight: 600;
+        height: 3.5em;
+        letter-spacing: 0.225em;
+        line-height: 3.5em;
+        padding: 0 2.75em;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        white-space: nowrap;
+        transition: all 0.2s ease;
+    }
+
+    .button:hover {
+        background-color: rgba(255, 255, 255, 0.125);
+    }
+
+    .button.primary {
+        background-color: #fff;
+        box-shadow: none;
+        color: var(--primary-color);
+    }
+
+    .button.primary:hover {
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .button.fit {
+        width: 100%;
+    }
+
+    .actions {
+        display: flex;
+        gap: 1em;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .actions.stacked {
+        flex-direction: column;
+    }
+
+    @media screen and (max-width: 980px) {
+        #page-header {
+            padding: 6em 0 4em 0;
+        }
+
+        #page-header h1 {
+            font-size: 2.5em;
+        }
+
+        .profile-section {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            font-size: 3em;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-links {
+            justify-content: center;
+        }
+
+        .certifications-grid {
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
+    }
+
+    @media screen and (max-width: 736px) {
+        #page-header {
+            padding: 5em 0 3em 0;
+        }
+
+        #page-header h1 {
+            font-size: 2em;
+        }
+
+        .profile-info h2 {
+            font-size: 2em;
+        }
+
+        .certifications-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .timeline {
+            padding-left: 2em;
+        }
+
+        .timeline-marker {
+            left: -2.5em;
+        }
+    }

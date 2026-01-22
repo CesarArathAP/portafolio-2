@@ -1,0 +1,173 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE, EDUCATION, CERTIFICATIONS } from "../config";
+import "../styles/about.css";
+---
+
+<Layout title="Sobre Mí - Cesar Angeles">
+    <Header />
+
+    <!-- Page Header -->
+    <section id="page-header" class="wrapper style1">
+        <div class="inner">
+            <header class="major">
+                <h1>Sobre Mí</h1>
+                <p>
+                    Conoce más sobre mi trayectoria académica,<br />
+                    experiencia y objetivos profesionales.
+                </p>
+            </header>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="wrapper style2">
+        <div class="inner">
+            <div class="about-content">
+                <div class="profile-section">
+                    <div class="profile-image">
+                        <div class="avatar">CA</div>
+                    </div>
+                    <div class="profile-info">
+                        <h2>{SITE.author}</h2>
+                        <p class="title">{SITE.hero.subtitle}</p>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <a href={`mailto:${SITE.email}`}>{SITE.email}</a
+                                >
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>{SITE.phone}</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>{SITE.location}</span>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a
+                                href={SITE.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="social-link"
+                            >
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a
+                                href={SITE.linkedin}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="social-link"
+                            >
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bio-section">
+                    <h3>¿Quién soy?</h3>
+                    <p>
+                        Soy estudiante de la carrera <strong
+                            >Ingeniería en Desarrollo y Gestión de Software
+                            Multiplataforma</strong
+                        >, cursada en la Universidad Tecnológica de Tulancingo.
+                        Mi pasión por la tecnología me ha llevado a desarrollar
+                        habilidades en diversas áreas del desarrollo de
+                        software.
+                    </p>
+                    <p>
+                        Cuento con experiencia práctica adquirida durante mi
+                        estadía de TSU, el desarrollo de
+                        <strong>tres proyectos integradores</strong> y participación
+                        en <strong>2 Hackathons</strong>, donde he aplicado mis
+                        conocimientos en análisis, desarrollo y gestión de
+                        software web y móvil.
+                    </p>
+                    <p>
+                        Me caracterizo por ser una persona <strong
+                            >responsable, proactiva</strong
+                        > y con gran disposición para aprender y adaptarme a nuevos
+                        entornos tecnológicos. Busco constantemente oportunidades
+                        para crecer profesionalmente y contribuir con soluciones innovadoras.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="wrapper style3">
+        <div class="inner">
+            <header class="section-header">
+                <i class="fas fa-graduation-cap"></i>
+                <h2>Educación</h2>
+            </header>
+            <div class="timeline">
+                {
+                    EDUCATION.map((item) => (
+                        <div class="timeline-item">
+                            <div class="timeline-marker" />
+                            <div class="timeline-content">
+                                <h3>{item.title}</h3>
+                                <p class="institution">{item.institution}</p>
+                                <span class="year">{item.year}</span>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="wrapper style2">
+        <div class="inner">
+            <header class="section-header">
+                <i class="fas fa-certificate"></i>
+                <h2>Certificaciones</h2>
+            </header>
+            <div class="certifications-grid">
+                {
+                    CERTIFICATIONS.map((cert) => (
+                        <div class="cert-card">
+                            <i class="fas fa-award" />
+                            <h4>{cert.title}</h4>
+                            <span class="cert-year">{cert.year}</span>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" class="wrapper style4">
+        <div class="inner">
+            <header>
+                <h2>¿Listo para colaborar?</h2>
+                <p>
+                    Estoy disponible para proyectos freelance, prácticas
+                    profesionales<br />
+                    o cualquier oportunidad que represente un desafío interesante.
+                </p>
+            </header>
+            <ul class="actions stacked">
+                <li>
+                    <a href={`mailto:${SITE.email}`} class="button fit primary"
+                        >Enviar Mensaje</a
+                    >
+                </li>
+                <li>
+                    <a href="/projects" class="button fit">Ver Proyectos</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <Footer />
+</Layout>

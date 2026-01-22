@@ -1,0 +1,49 @@
+---
+import { SITE } from "../config";
+import "../styles/main.css";
+import "../styles/overrides.css";
+
+interface Props {
+    title?: string;
+    description?: string;
+}
+
+const { title = SITE.title, description = SITE.description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content={description} />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, user-scalable=no"
+        />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="/fontawesome-all.min.css" />
+
+        <!-- Noscript CSS -->
+        <noscript>
+            <link rel="stylesheet" href="/noscript.css" />
+        </noscript>
+    </head>
+    <body class="landing is-preload">
+        <div id="page-wrapper">
+            <slot />
+        </div>
+
+        <!-- Scripts -->
+        <script is:inline src="/scripts/jquery.min.js"></script>
+        <script is:inline src="/scripts/jquery.scrollex.min.js"></script>
+        <script is:inline src="/scripts/jquery.scrolly.min.js"></script>
+        <script is:inline src="/scripts/browser.min.js"></script>
+        <script is:inline src="/scripts/breakpoints.min.js"></script>
+        <script is:inline src="/scripts/util.js"></script>
+        <script is:inline src="/scripts/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,252 @@
+#page-header {
+    background-color: var(--primary-color);
+    color: rgba(255, 255, 255, 0.75);
+    padding: 8em 0 6em 0;
+    text-align: center;
+    margin-top: 3.25em;
+}
+
+#page-header h1 {
+    color: #fff;
+    font-size: 3em;
+    margin: 0 0 0.5em 0;
+}
+
+#page-header p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.1em;
+}
+
+#skills {
+    padding: 6em 0;
+}
+
+.skill-category {
+    margin-bottom: 4em;
+}
+
+.skill-category:last-child {
+    margin-bottom: 0;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.category-header i {
+    font-size: 2em;
+    color: var(--primary-color);
+}
+
+.category-header h2 {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 2em;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.skill-card {
+    background: linear-gradient(135deg,
+            var(--primary-color),
+            var(--secondary-color));
+    color: #fff;
+    padding: 1em 1.5em;
+    border-radius: 0.5em;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: default;
+    flex: 0 0 auto;
+    min-width: fit-content;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(94, 66, 166, 0.3);
+}
+
+.skill-name {
+    font-weight: 600;
+    font-size: 1em;
+    white-space: nowrap;
+}
+
+/* Soft Skills Section */
+#soft-skills {
+    background-color: #f7f7f7;
+    padding: 6em 0;
+}
+
+.major {
+    margin: 0 0 3em 0;
+    text-align: center;
+}
+
+.major h2 {
+    font-size: 2.25em;
+    margin: 0 0 0.75em 0;
+    color: var(--text-color);
+}
+
+.major p {
+    color: #666;
+    font-size: 1.1em;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5em;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.features li {
+    text-align: center;
+}
+
+.features li .icon {
+    display: inline-block;
+    border: solid 2px var(--border-color);
+    border-radius: 100%;
+    height: 6em;
+    line-height: 6em;
+    width: 6em;
+    margin: 0 0 1em 0;
+    color: var(--primary-color);
+}
+
+.features li .icon:before {
+    font-size: 2.5em;
+}
+
+.features li h3 {
+    margin: 0 0 0.5em 0;
+    color: var(--text-color);
+}
+
+.features li p {
+    color: #666;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+/* CTA */
+.wrapper.style4 {
+    background-color: var(--primary-color);
+    color: rgba(255, 255, 255, 0.75);
+    text-align: center;
+    padding: 4em 0 2em 0;
+}
+
+.wrapper.style4 h2 {
+    color: #fff;
+}
+
+.wrapper.style4 p {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.button {
+    appearance: none;
+    background-color: transparent;
+    border: 0;
+    border-radius: 3.5em;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 600;
+    height: 3.5em;
+    letter-spacing: 0.225em;
+    line-height: 3.5em;
+    padding: 0 2.75em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.button:hover {
+    background-color: rgba(255, 255, 255, 0.125);
+}
+
+.button.primary {
+    background-color: #fff;
+    box-shadow: none;
+    color: var(--primary-color);
+}
+
+.button.primary:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.button.fit {
+    width: 100%;
+}
+
+.actions {
+    display: flex;
+    gap: 1em;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.actions.stacked {
+    flex-direction: column;
+}
+
+@media screen and (max-width: 980px) {
+    #page-header {
+        padding: 6em 0 4em 0;
+    }
+
+    #page-header h1 {
+        font-size: 2.5em;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+
+    .features {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media screen and (max-width: 736px) {
+    #page-header {
+        padding: 5em 0 3em 0;
+    }
+
+    #page-header h1 {
+        font-size: 2em;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 1em;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .category-header {
+        flex-direction: column;
+        text-align: center;
+    }
+}

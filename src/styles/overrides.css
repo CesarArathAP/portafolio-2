@@ -1,0 +1,13 @@
+/* Ajustes de rutas para Astro */
+/* Las imágenes del CSS ahora están en /css-images/ */
+
+/* Sobrescribir rutas de imágenes del main.css original */
+body:after {
+    background-image: url('/css-images/overlay.png') !important;
+}
+
+/* Asegurar que las variables CSS estén disponibles */
+:root {
+    --primary-color: #5e42a6;
+    --secondary-color: #b74e91;
+}

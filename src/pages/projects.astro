@@ -1,0 +1,125 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE, FEATURED_PROJECTS } from "../config";
+import "../styles/projects.css";
+
+// Todos los proyectos (puedes expandir esta lista)
+const allProjects = [
+    ...FEATURED_PROJECTS,
+    {
+        title: "CleanUp - Gestión de Residuos",
+        description:
+            "Aplicación móvil para gestión y reciclaje de residuos urbanos con gamificación.",
+        technologies: ["React Native", "Firebase", "Google Maps API"],
+        github: "https://github.com/CesarArathAP",
+        year: 2024,
+        status: "En desarrollo",
+    },
+    {
+        title: "Jobly - Portal de Empleos",
+        description:
+            "Plataforma web para búsqueda y postulación a ofertas laborales.",
+        technologies: ["Laravel", "MySQL", "Bootstrap"],
+        github: "https://github.com/CesarArathAP",
+        year: 2023,
+        status: "Concluido",
+    },
+    {
+        title: "SafeCheckSchool",
+        description:
+            "Sistema de control de acceso escolar con reconocimiento facial.",
+        technologies: ["Python", "OpenCV", "Flask", "SQLite"],
+        github: "https://github.com/CesarArathAP",
+        year: 2023,
+        status: "Concluido",
+    },
+];
+---
+
+<Layout title="Proyectos - Cesar Angeles">
+    <Header />
+
+    <!-- Page Header -->
+    <section id="page-header" class="wrapper style1">
+        <div class="inner">
+            <header class="major">
+                <h1>Mis Proyectos</h1>
+                <p>
+                    Soluciones tecnológicas desarrolladas durante mi formación
+                    académica<br />
+                    y participación en hackathons y proyectos integradores.
+                </p>
+            </header>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section id="projects" class="wrapper style2">
+        <div class="inner">
+            <div class="projects-grid">
+                {
+                    allProjects.map((project) => (
+                        <article class="project-card">
+                            <div class="project-header">
+                                <h3>{project.title}</h3>
+                                {project.badge && (
+                                    <span class="badge">{project.badge}</span>
+                                )}
+                                <span
+                                    class={`status ${project.status.toLowerCase().replace(" ", "-")}`}
+                                >
+                                    {project.status}
+                                </span>
+                            </div>
+                            <p class="description">{project.description}</p>
+                            <div class="technologies">
+                                {project.technologies.map((tech) => (
+                                    <span class="tech-tag">{tech}</span>
+                                ))}
+                            </div>
+                            <div class="project-footer">
+                                <span class="year">{project.year}</span>
+                                {project.github && (
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="button small"
+                                    >
+                                        <i class="fab fa-github" /> Ver Código
+                                    </a>
+                                )}
+                            </div>
+                        </article>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" class="wrapper style4">
+        <div class="inner">
+            <header>
+                <h2>¿Tienes un proyecto en mente?</h2>
+                <p>
+                    Estoy disponible para colaborar en proyectos innovadores<br
+                    />
+                    que representen un desafío técnico interesante.
+                </p>
+            </header>
+            <ul class="actions stacked">
+                <li>
+                    <a href={`mailto:${SITE.email}`} class="button fit primary"
+                        >Contactar</a
+                    >
+                </li>
+                <li><a href="/about" class="button fit">Conocer más</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <Footer />
+</Layout>
