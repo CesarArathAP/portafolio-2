@@ -1,28 +1,25 @@
 ---
 import { SITE } from "../config";
-
-const currentPath = Astro.url.pathname;
 ---
 
 <!-- Header -->
-<header id="header" class:list={[currentPath === "/" ? "alt" : ""]}>
-    <h1><a href="/">{SITE.author}</a></h1>
+<header id="header" class="alt">
+    <h1><a href="#hero">{SITE.author}</a></h1>
     <nav id="nav">
-        <ul>
-            <li class="special">
-                <a href="#menu" class="menuToggle"><span>Menu</span></a>
-                <div id="menu">
-                    <ul>
-                        {
-                            SITE.nav.map((item) => (
-                                <li>
-                                    <a href={item.link}>{item.text}</a>
-                                </li>
-                            ))
-                        }
-                    </ul>
-                </div>
-            </li>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="menu">
+            {
+                SITE.nav.map((item) => (
+                    <li>
+                        <a href={item.link}>{item.text}</a>
+                    </li>
+                ))
+            }
         </ul>
     </nav>
 </header>
