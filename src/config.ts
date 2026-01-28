@@ -11,7 +11,7 @@ export const SITE = {
 
   // Redes Sociales
   github: 'https://github.com/CesarArathAP',
-  linkedin: 'https://linkedin.com/in/cesar-angeles',
+  linkedin: 'https://www.linkedin.com/in/césar-arath-angeles-pérez-b603132b6/',
 
   // Hero Section
   hero: {
