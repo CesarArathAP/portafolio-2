@@ -2,15 +2,21 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { SITE, FEATURED_PROJECTS } from "../config";
-import "../styles/index.css";
+import {
+	SITE,
+	FEATURED_PROJECTS,
+	SKILLS,
+	EDUCATION,
+	CERTIFICATIONS,
+} from "../config";
+import "../styles/single-page.css";
 ---
 
 <Layout title={SITE.title}>
 	<Header />
 
-	<!-- Banner / Hero Section -->
-	<section id="banner">
+	<!-- Hero Section -->
+	<section id="hero" class="banner">
 		<div class="inner">
 			<h2>{SITE.hero.title}</h2>
 			<p>
@@ -19,144 +25,359 @@ import "../styles/index.css";
 			</p>
 			<ul class="actions special">
 				<li>
-					<a href="/projects" class="button primary">Ver Proyectos</a>
+					<a href="#projects" class="button primary">Ver Proyectos</a>
 				</li>
 			</ul>
 		</div>
-		<a href="#one" class="more scrolly">Conocer más</a>
+		<a href="#about" class="more scrolly">Conocer más</a>
 	</section>
 
-	<!-- Sobre Mí -->
-	<section id="one" class="wrapper style1 special">
+	<!-- About Section -->
+	<section id="about" class="wrapper style2">
 		<div class="inner">
 			<header class="major">
-				<h2>Desarrollador de Software Multiplataforma</h2>
+				<h2>Sobre Mí</h2>
 				<p>
-					Estudiante apasionado por crear soluciones tecnológicas
-					innovadoras.<br />
-					Experiencia en desarrollo web, móvil y gestión de proyectos con
-					metodologías ágiles.
+					Conoce más sobre mi trayectoria académica,<br />
+					experiencia y objetivos profesionales.
 				</p>
 			</header>
-			<ul class="icons major">
-				<li>
-					<span class="icon solid fa-code major style1"
-						><span class="label">Desarrollo</span></span
-					>
-				</li>
-				<li>
-					<span class="icon solid fa-mobile-alt major style2"
-						><span class="label">Móvil</span></span
-					>
-				</li>
-				<li>
-					<span class="icon solid fa-database major style3"
-						><span class="label">Bases de Datos</span></span
-					>
-				</li>
-			</ul>
+
+			<div class="about-content">
+				<div class="profile-section">
+					<div class="profile-image">
+						<div class="avatar">CA</div>
+					</div>
+					<div class="profile-info">
+						<h3>{SITE.author}</h3>
+						<p class="title">{SITE.hero.subtitle}</p>
+						<div class="contact-info">
+							<div class="contact-item">
+								<i class="fas fa-envelope"></i>
+								<a href={`mailto:${SITE.email}`}>{SITE.email}</a
+								>
+							</div>
+							<div class="contact-item">
+								<i class="fas fa-phone"></i>
+								<span>{SITE.phone}</span>
+							</div>
+							<div class="contact-item">
+								<i class="fas fa-map-marker-alt"></i>
+								<span>{SITE.location}</span>
+							</div>
+						</div>
+						<div class="social-links">
+							<a
+								href={SITE.github}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="social-link"
+								aria-label="GitHub"
+							>
+								<i class="fab fa-github"></i>
+							</a>
+							<a
+								href={SITE.linkedin}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="social-link"
+								aria-label="LinkedIn"
+							>
+								<i class="fab fa-linkedin"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="bio-section">
+					<h3>¿Quién soy?</h3>
+					<p>
+						Soy estudiante de la carrera <strong
+							>Ingeniería en Desarrollo y Gestión de Software
+							Multiplataforma</strong
+						>, cursada en la Universidad Tecnológica de Tulancingo.
+						Mi pasión por la tecnología me ha llevado a desarrollar
+						habilidades en diversas áreas del desarrollo de
+						software.
+					</p>
+					<p>
+						Cuento con experiencia práctica adquirida durante mi
+						estadía de TSU, el desarrollo de
+						<strong>tres proyectos integradores</strong> y participación
+						en <strong>2 Hackathons</strong>, donde he aplicado mis
+						conocimientos en análisis, desarrollo y gestión de
+						software web y móvil.
+					</p>
+					<p>
+						Me caracterizo por ser una persona <strong
+							>responsable, proactiva</strong
+						> y con gran disposición para aprender y adaptarme a nuevos
+						entornos tecnológicos. Busco constantemente oportunidades
+						para crecer profesionalmente y contribuir con soluciones innovadoras.
+					</p>
+				</div>
+			</div>
 		</div>
 	</section>
 
-	<!-- Proyectos Destacados -->
-	<section id="two" class="wrapper alt style2">
-		{
-			FEATURED_PROJECTS.map((project, index) => (
-				<section class="spotlight">
-					<div class="image">
-						<img
-							src={`/images/project-${index + 1}.jpg`}
-							alt={project.title}
-						/>
-					</div>
-					<div class="content">
-						<h2>{project.title}</h2>
-						{project.badge && (
-							<span class="badge">{project.badge}</span>
-						)}
-						<p>{project.description}</p>
-						<p class="technologies">
-							<strong>Tecnologías:</strong>{" "}
-							{project.technologies.join(", ")}
-						</p>
-						{project.github && (
-							<ul class="actions">
-								<li>
+	<!-- Projects Section -->
+	<section id="projects" class="wrapper style3">
+		<div class="inner">
+			<header class="major">
+				<h2>Mis Proyectos</h2>
+				<p>
+					Soluciones tecnológicas desarrolladas durante mi formación
+					académica<br />
+					y participación en hackathons y proyectos integradores.
+				</p>
+			</header>
+
+			<div class="projects-grid">
+				{
+					FEATURED_PROJECTS.map((project) => (
+						<article class="project-card">
+							<div class="project-header">
+								<h3>{project.title}</h3>
+								{project.badge && (
+									<span class="badge">{project.badge}</span>
+								)}
+								<span
+									class={`status ${project.status.toLowerCase().replace(" ", "-")}`}
+								>
+									{project.status}
+								</span>
+							</div>
+							<p class="description">{project.description}</p>
+							<div class="technologies">
+								{project.technologies.map((tech) => (
+									<span class="tech-tag">{tech}</span>
+								))}
+							</div>
+							<div class="project-footer">
+								<span class="year">{project.year}</span>
+								{project.github && (
 									<a
 										href={project.github}
 										target="_blank"
 										rel="noopener noreferrer"
 										class="button small"
 									>
-										Ver en GitHub
+										<i class="fab fa-github" /> Ver Código
 									</a>
-								</li>
-							</ul>
-						)}
-					</div>
-				</section>
-			))
-		}
+								)}
+							</div>
+						</article>
+					))
+				}
+			</div>
+		</div>
 	</section>
 
-	<!-- Habilidades -->
-	<section id="three" class="wrapper style3 special">
+	<!-- Skills Section -->
+	<section id="skills" class="wrapper style2">
 		<div class="inner">
 			<header class="major">
 				<h2>Habilidades Técnicas</h2>
 				<p>
-					Tecnologías y herramientas con las que trabajo<br />
-					para crear soluciones de software de calidad.
+					Tecnologías, herramientas y metodologías<br />
+					que domino para crear soluciones de software.
 				</p>
 			</header>
-			<ul class="features">
-				<li class="icon solid fa-laptop-code">
-					<h3>Desarrollo Web</h3>
+
+			<!-- Technical Skills -->
+			<div class="skills-container">
+				<!-- Languages -->
+				<div class="skill-category">
+					<div class="category-header">
+						<i class="fas fa-code"></i>
+						<h3>Lenguajes de Programación</h3>
+					</div>
+					<div class="skills-grid">
+						{
+							SKILLS.languages.map((skill) => (
+								<div class="skill-card">
+									<span class="skill-name">{skill}</span>
+								</div>
+							))
+						}
+					</div>
+				</div>
+
+				<!-- Frameworks -->
+				<div class="skill-category">
+					<div class="category-header">
+						<i class="fas fa-layer-group"></i>
+						<h3>Frameworks y Librerías</h3>
+					</div>
+					<div class="skills-grid">
+						{
+							SKILLS.frameworks.map((skill) => (
+								<div class="skill-card">
+									<span class="skill-name">{skill}</span>
+								</div>
+							))
+						}
+					</div>
+				</div>
+
+				<!-- Databases -->
+				<div class="skill-category">
+					<div class="category-header">
+						<i class="fas fa-database"></i>
+						<h3>Bases de Datos</h3>
+					</div>
+					<div class="skills-grid">
+						{
+							SKILLS.databases.map((skill) => (
+								<div class="skill-card">
+									<span class="skill-name">{skill}</span>
+								</div>
+							))
+						}
+					</div>
+				</div>
+
+				<!-- Tools -->
+				<div class="skill-category">
+					<div class="category-header">
+						<i class="fas fa-tools"></i>
+						<h3>Herramientas de Desarrollo</h3>
+					</div>
+					<div class="skills-grid">
+						{
+							SKILLS.tools.map((skill) => (
+								<div class="skill-card">
+									<span class="skill-name">{skill}</span>
+								</div>
+							))
+						}
+					</div>
+				</div>
+
+				<!-- Methodologies -->
+				<div class="skill-category">
+					<div class="category-header">
+						<i class="fas fa-tasks"></i>
+						<h3>Metodologías</h3>
+					</div>
+					<div class="skills-grid">
+						{
+							SKILLS.methodologies.map((skill) => (
+								<div class="skill-card">
+									<span class="skill-name">{skill}</span>
+								</div>
+							))
+						}
+					</div>
+				</div>
+			</div>
+
+			<!-- Soft Skills -->
+			<div class="soft-skills-section">
+				<header class="section-header">
+					<h3>Habilidades Blandas</h3>
 					<p>
-						React, Laravel, Node.js, Express. Creación de
-						aplicaciones web modernas y escalables.
+						Competencias interpersonales que complementan mis
+						habilidades técnicas
 					</p>
-				</li>
-				<li class="icon solid fa-mobile-alt">
-					<h3>Desarrollo Móvil</h3>
-					<p>
-						React Native, Firebase. Aplicaciones móviles
-						multiplataforma con experiencia de usuario fluida.
-					</p>
-				</li>
-				<li class="icon solid fa-database">
-					<h3>Bases de Datos</h3>
-					<p>
-						MySQL, MongoDB, Firebase. Diseño y gestión de bases de
-						datos relacionales y NoSQL.
-					</p>
-				</li>
-				<li class="icon solid fa-code-branch">
-					<h3>Control de Versiones</h3>
-					<p>
-						Git, GitHub. Trabajo colaborativo y gestión de código
-						fuente con buenas prácticas.
-					</p>
-				</li>
-				<li class="icon solid fa-tasks">
-					<h3>Metodologías Ágiles</h3>
-					<p>
-						SCRUM, Kanban. Gestión de proyectos con enfoque
-						iterativo e incremental.
-					</p>
-				</li>
-				<li class="icon solid fa-tools">
-					<h3>Herramientas</h3>
-					<p>
-						Docker, Postman, Figma, VS Code. Ecosistema completo de
-						desarrollo profesional.
-					</p>
-				</li>
-			</ul>
+				</header>
+				<ul class="features">
+					<li class="icon solid fa-users">
+						<h4>Trabajo en Equipo</h4>
+						<p>
+							Colaboración efectiva en equipos multidisciplinarios
+							con enfoque en objetivos comunes.
+						</p>
+					</li>
+					<li class="icon solid fa-comments">
+						<h4>Comunicación Efectiva</h4>
+						<p>
+							Capacidad para expresar ideas técnicas de forma
+							clara y comprensible.
+						</p>
+					</li>
+					<li class="icon solid fa-brain">
+						<h4>Pensamiento Analítico</h4>
+						<p>
+							Análisis lógico de problemas complejos para
+							encontrar soluciones eficientes.
+						</p>
+					</li>
+					<li class="icon solid fa-lightbulb">
+						<h4>Creatividad</h4>
+						<p>
+							Generación de ideas innovadoras para resolver
+							desafíos técnicos.
+						</p>
+					</li>
+					<li class="icon solid fa-book-reader">
+						<h4>Aprendizaje Continuo</h4>
+						<p>
+							Adaptación rápida a nuevas tecnologías y
+							metodologías de desarrollo.
+						</p>
+					</li>
+					<li class="icon solid fa-puzzle-piece">
+						<h4>Resolución de Problemas</h4>
+						<p>
+							Enfoque sistemático para identificar y solucionar
+							problemas técnicos.
+						</p>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</section>
 
-	<!-- Formulario de Contacto -->
+	<!-- Education & Certifications Section -->
+	<section id="education" class="wrapper style3">
+		<div class="inner">
+			<!-- Education -->
+			<div class="education-section">
+				<header class="section-header">
+					<i class="fas fa-graduation-cap"></i>
+					<h2>Educación</h2>
+				</header>
+				<div class="timeline">
+					{
+						EDUCATION.map((item) => (
+							<div class="timeline-item">
+								<div class="timeline-marker" />
+								<div class="timeline-content">
+									<h3>{item.title}</h3>
+									<p class="institution">
+										{item.institution}
+									</p>
+									<span class="year">{item.year}</span>
+								</div>
+							</div>
+						))
+					}
+				</div>
+			</div>
+
+			<!-- Certifications -->
+			<div class="certifications-section">
+				<header class="section-header">
+					<i class="fas fa-certificate"></i>
+					<h2>Certificaciones</h2>
+				</header>
+				<div class="certifications-grid">
+					{
+						CERTIFICATIONS.map((cert) => (
+							<div class="cert-card">
+								<i class="fas fa-award" />
+								<h4>{cert.title}</h4>
+								<span class="cert-year">{cert.year}</span>
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact Form Section -->
 	<section id="contact" class="wrapper style5 special">
 		<div class="inner">
 			<header class="major">
@@ -230,30 +451,5 @@ import "../styles/index.css";
 		</div>
 	</section>
 
-	<!-- CTA -->
-	<section id="cta" class="wrapper style4">
-		<div class="inner">
-			<header>
-				<h2>¿Interesado en colaborar?</h2>
-				<p>
-					Estoy abierto a oportunidades de colaboración en proyectos
-					innovadores<br />
-					y desafíos que impulsen mi crecimiento profesional.
-				</p>
-			</header>
-			<ul class="actions stacked">
-				<li>
-					<a href="/about" class="button fit primary"
-						>Conocer más sobre mí</a
-					>
-				</li>
-				<!-- <li>
-					<a href={`mailto:${SITE.email}`} class="button fit"
-						>Contactar</a
-					>
-				</li> -->
-			</ul>
-		</div>
-	</section>
 	<Footer />
 </Layout>
