@@ -22,10 +22,11 @@ export const SITE = {
 
   // Navegación
   nav: [
-    { text: 'Inicio', link: '/' },
-    { text: 'Proyectos', link: '/projects' },
-    { text: 'Habilidades', link: '/skills' },
-    { text: 'Sobre Mí', link: '/about' },
+    { text: 'Inicio', link: '#hero' },
+    { text: 'Sobre Mí', link: '#about' },
+    { text: 'Proyectos', link: '#projects' },
+    { text: 'Habilidades', link: '#skills' },
+    { text: 'Contacto', link: '#contact' },
   ],
 } as const;
 
@@ -54,6 +55,30 @@ export const FEATURED_PROJECTS = [
     technologies: ['PHP', 'MySQL', 'JavaScript'],
     github: 'https://github.com/CesarArathAP/Sistema-de-Compras-Mayol',
     year: 2024,
+    status: 'Concluido',
+  },
+  {
+    title: 'CleanUp - Gestión de Residuos',
+    description: 'Aplicación móvil para gestión y reciclaje de residuos urbanos con gamificación.',
+    technologies: ['React Native', 'Firebase', 'Google Maps API'],
+    github: 'https://github.com/CesarArathAP',
+    year: 2024,
+    status: 'En desarrollo',
+  },
+  {
+    title: 'Jobly - Portal de Empleos',
+    description: 'Plataforma web para búsqueda y postulación a ofertas laborales.',
+    technologies: ['Laravel', 'MySQL', 'Bootstrap'],
+    github: 'https://github.com/CesarArathAP',
+    year: 2023,
+    status: 'Concluido',
+  },
+  {
+    title: 'SafeCheckSchool',
+    description: 'Sistema de control de acceso escolar con reconocimiento facial.',
+    technologies: ['Python', 'OpenCV', 'Flask', 'SQLite'],
+    github: 'https://github.com/CesarArathAP',
+    year: 2023,
     status: 'Concluido',
   },
 ];
