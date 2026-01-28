@@ -156,6 +156,80 @@ import "../styles/index.css";
 		</div>
 	</section>
 
+	<!-- Formulario de Contacto -->
+	<section id="contact" class="wrapper style5 special">
+		<div class="inner">
+			<header class="major">
+				<h2>Contáctame</h2>
+				<p>
+					¿Tienes alguna pregunta o propuesta?<br />
+					Envíame un mensaje y te responderé lo antes posible.
+				</p>
+			</header>
+			<form
+				action="https://formspree.io/f/xgoklyww"
+				method="POST"
+				class="contact-form"
+			>
+				<!-- Campo oculto para identificar el formulario -->
+				<input
+					type="hidden"
+					name="_subject"
+					value="Nuevo mensaje desde el portafolio"
+				/>
+
+				<div class="row gtr-uniform">
+					<div class="col-6 col-12-xsmall">
+						<input
+							type="text"
+							name="nombre"
+							id="nombre"
+							placeholder="Nombre Completo"
+							required
+						/>
+					</div>
+					<div class="col-6 col-12-xsmall">
+						<input
+							type="email"
+							name="_replyto"
+							id="email"
+							placeholder="Correo Electrónico"
+							required
+						/>
+					</div>
+					<div class="col-12">
+						<input
+							type="text"
+							name="asunto"
+							id="asunto"
+							placeholder="Asunto"
+							required
+						/>
+					</div>
+					<div class="col-12">
+						<textarea
+							name="mensaje"
+							id="mensaje"
+							placeholder="Mensaje"
+							rows="6"
+							required></textarea>
+					</div>
+					<div class="col-12">
+						<ul class="actions special">
+							<li>
+								<input
+									type="submit"
+									value="Enviar Mensaje"
+									class="button primary"
+								/>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+
 	<!-- CTA -->
 	<section id="cta" class="wrapper style4">
 		<div class="inner">
@@ -173,11 +247,11 @@ import "../styles/index.css";
 						>Conocer más sobre mí</a
 					>
 				</li>
-				<li>
+				<!-- <li>
 					<a href={`mailto:${SITE.email}`} class="button fit"
 						>Contactar</a
 					>
-				</li>
+				</li> -->
 			</ul>
 		</div>
 	</section>
