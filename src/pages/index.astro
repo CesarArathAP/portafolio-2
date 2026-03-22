@@ -16,9 +16,9 @@ import "../styles/single-page.css";
 	<Header />
 
 	<!-- Hero Section -->
-	<section id="hero" class="banner">
+	<section id="hero" class="banner" style={`background-image: linear-gradient(to top, rgba(46,49,65,0.8), rgba(46,49,65,0.8)), url('${import.meta.env.BASE_URL}images/perfil.png');`}>
 		<div class="inner">
-			<img src="/images/perfil.png" alt={SITE.author} class="hero-profile-pic" />
+			<img src={`${import.meta.env.BASE_URL}images/perfil.png`} alt={SITE.author} class="hero-profile-pic" />
 			<h2>{SITE.hero.title}</h2>
 			<p>
 				{SITE.hero.subtitle}<br />

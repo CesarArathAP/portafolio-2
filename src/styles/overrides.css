@@ -3,7 +3,21 @@
 
 /* Sobrescribir rutas de imágenes del main.css original */
 body:after {
-    background-image: url('/css-images/overlay.png') !important;
+    background-image: var(--overlay-url) !important;
+}
+
+/* Sobrescribir todas las referencias a banner.jpg del main.css */
+#main>header {
+    background-image: linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--banner-url) !important;
+}
+
+body.landing #page-wrapper {
+    background-image: linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--banner-url) !important;
+}
+
+body.is-mobile.landing #banner,
+body.is-mobile.landing .wrapper.style4 {
+    background-image: linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--banner-url) !important;
 }
 
 /* Asegurar que las variables CSS estén disponibles */

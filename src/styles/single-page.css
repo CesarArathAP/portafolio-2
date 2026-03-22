@@ -123,8 +123,7 @@ section {
     background-image:
         linear-gradient(to top,
             rgba(46, 49, 65, 0.8),
-            rgba(46, 49, 65, 0.8)),
-        url("/images/banner.jpg");
+            rgba(46, 49, 65, 0.8));
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

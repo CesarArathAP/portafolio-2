@@ -1,8 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config configuracion para el despliegue en AWS Amplify
+// https://astro.build/config - configuración para GitHub Pages
 export default defineConfig({
-	// site: 'URL de AWS se agregará después del primer deploy'
-	// base: '/portafolio-2', // Comentado para AWS - descomentar para GitHub Pages
+	site: 'https://CesarArathAP.github.io',
+	base: '/portafolio-2/',
 });
