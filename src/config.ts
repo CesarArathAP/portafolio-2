@@ -2,7 +2,7 @@ export const SITE = {
   // Información Personal
   author: 'Cesar Arath Angeles Perez',
   title: 'Portafolio - Cesar Angeles',
-  description: 'Portafolio profesional de Cesar Arath Angeles Perez - Ingeniero en Desarrollo y Gestión de Software Multiplataforma',
+  description: 'Portafolio profesional de Cesar Arath Angeles Perez - Recién Egresado de Ingeniería en Desarrollo y Gestión de Software Multiplataforma',
 
   // Contacto
   email: 'cesararath1976@gmail.com',
@@ -16,8 +16,8 @@ export const SITE = {
   // Hero Section
   hero: {
     title: 'Cesar Arath Angeles Perez',
-    subtitle: 'Ingeniero en Desarrollo y Gestión de Software Multiplataforma',
-    description: 'Estudiante apasionado por el desarrollo web y móvil, con experiencia en proyectos integradores y hackathons.',
+    subtitle: 'Recién Egresado de Ingeniería en Desarrollo y Gestión de Software Multiplataforma',
+    description: 'Apasionado por el desarrollo web y móvil, con experiencia en proyectos integradores y hackathons.',
   },
 
   // Navegación
